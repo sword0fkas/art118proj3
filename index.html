@@ -67,19 +67,14 @@
         smoothThreshold="5"
       >
         
-      <a-video
-          src="#overlay-video"
-          width="1"
-          height="0.5625"
-          position="0 0 0"
-          rotation="-90 0 0"
-          autoplay
-          loop
-          muted
-          playsinline
-          crossorigin="anonymous"
-        >
-        </a-video>
+      <a-plane
+        src="#overlay-video"
+        width="1"
+        height="0.5625"
+        position="0 0 0"
+        rotation="-90 0 0"
+      >
+      </a-plane>
         
     </a-nft>
     <a-entity camera></a-entity>
@@ -92,9 +87,7 @@
 
     marker.addEventListener("markerFound", () => {
       if (video && video.paused) {
-        video.play().catch((e) => {
-          console.log("Autoplay failed:", e);
-        });
+        video.play().catch((e) => console.log("Video play failed:", e));
       }
     });
 
