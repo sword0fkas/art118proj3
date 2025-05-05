@@ -26,6 +26,11 @@
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
+    <br>
+    <div>Credits:</div>
+    <div>fset File Converter: carnaux on github</div>
+    <div>AR.js: AR.js org and jeromeetienne on github</div>
+    <div>Image-tracing AR advice: Miller Hollinger</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
@@ -36,12 +41,13 @@
     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
       <a-nft
         type="nft"
-        url="https://corsproxy.io/?url=https://github.com/sword0fkas/art118proj3/blob/main/detect.fset"
+        url="https://corsproxy.io/?url=https://sword0fkas.github.io/art118proj3/detect.fset"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
-      > 
+      >
+        
       <a-video
         src="https://sword0fkas.github.io/art118proj3/overlay.mp4"
         width="1"
