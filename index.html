@@ -60,19 +60,21 @@
     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
       <a-nft
         type="nft"
-        url="https://corsproxy.io/?url=https://sword0fkas.github.io/art118proj3/detect.fset"
+        url="https://sword0fkas.github.io/art118proj3/detect.fset"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
       >
         
-      <a-entity
-        gltf-model="your-server/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        scale="5 5 5"
-        position="150 300 -100"
+      <a-plane
+        src="#overlay-video"
+        width="1"
+        height="0.5625"
+        position="0 0 0"
+        rotation="-90 0 0"
       >
-      </a-entity>
+      </a-plane>
         
     </a-nft>
     <a-entity camera></a-entity>
