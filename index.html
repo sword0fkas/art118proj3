@@ -54,6 +54,8 @@
     >
     </video>
   </a-assets>
+
+    
     
     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
       <a-nft
@@ -80,6 +82,28 @@
         </a-video>
         
     </a-nft>
-    <a-video camera></a-video>
+    <a-entity camera></a-entity>
   </a-scene>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const marker = document.querySelector("a-nft");
+    const video = document.querySelector("#overlay-video");
+
+    marker.addEventListener("markerFound", () => {
+      if (video && video.paused) {
+        video.play().catch((e) => {
+          console.log("Autoplay failed:", e);
+        });
+      }
+    });
+
+    marker.addEventListener("markerLost", () => {
+      if (video && !video.paused) {
+        video.pause();
+      }
+    });
+  });
+</script>
+  
 </body>
