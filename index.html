@@ -27,40 +27,36 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
+
+  <video id="overlay-video" autoplay loop="true" src="https://sword0fkas.github.io/art118proj3/overlay.mp4"></video>
+  
+  <a-assets>
+    <video id="overlay-video" autoplay loop="true" src="your-video.mp4"></video>
+  </a-assets>
+
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true; precision: medium;"
     embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
   >
-    <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
     <a-nft
       type="nft"
-      url="https://corsproxy.io/?url=https://github.com/sword0fkas/art118proj3/blob/main/detect.fset"
+      url="https://sword0fkas.github.io/art118proj3/detect.fset"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <a-nft
-        type="nft"
-        url="https://sword0fkas.github.io/path/to/detect.fset"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-        >
-      </a-nft>
-      
       <a-video
         src="#overlay-video"
         width="1"
         height="0.5625"
         position="0 0 0"
         rotation="-90 0 0"
-      >
-      </a-entity>
+      ></a-video>
     </a-nft>
+
     <a-entity camera></a-entity>
   </a-scene>
 </body>
