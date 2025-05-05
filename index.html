@@ -41,6 +41,11 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+
+<a-assets>
+    <video id="overlay-video" src="https://sword0fkas.github.io/art118proj3/overlay.mp4" preload="auto" loop crossorigin="anonymous"></video>
+  </a-assets>
+    
     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
       <a-nft
         type="nft"
@@ -52,11 +57,14 @@
       >
         
       <a-video
-        src="https://sword0fkas.github.io/art118proj3/overlay.mp4"
+        src="#overlay-video"
         width="1"
         height="0.5625"
         position="0 0 0"
         rotation="-90 0 0"
+        autoplay
+        loop
+        crossorigin="anonymous"
       >
       </a-video>
     </a-nft>
